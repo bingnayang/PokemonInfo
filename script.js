@@ -10,20 +10,23 @@ function getInfo(e){
     xhr.onload = function(){
         if(this.status === 200){
             const response = JSON.parse(this.responseText);
-            // console.log(response.id);
+            // console.log(response);
+            let output = '';
 
             if(response.name === pokemonName){
-                // console.log(response);
-                const output = `
-                    <ul>
+                output += `
                         <li> Pokemon Name: ${response.name}</li>
+                        <li> Pokemon #: ${response.id}</li>
                         <li> Pokemon Height: ${response.height}</li>
                         <li> Pokemon Weight: ${response.weight}</li>
-                    </ul>
                 `;
+                response.types.forEach(function(e){
+                    output += `<li>Pokemon Type: ${e.type.name}</li>`;
+                });
+                response.abilities.forEach(function(e){
+                    output += `<li>Pokemon Abilities: ${e.ability.name}</li>`;
+                });
                 document.getElementById('displayInfo').innerHTML = output;
-            }else{
-                console.log("No such pokemon")
             }
         }
     }
