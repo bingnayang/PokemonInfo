@@ -1,0 +1,13 @@
+body{
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    /* background: #ffd740; */
+}
+.subtitle{
+    border: 4px solid #50514F;
+    background: #F75674;
+    padding: 8px;
+    font-weight: bold;
+    margin-top: 15px;
+    border-radius: 4px;
+}
