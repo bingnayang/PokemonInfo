@@ -13,20 +13,29 @@ function getInfo(e){
             const response = JSON.parse(this.responseText);
             // console.log(response);
             let output = '';
+            let list = '';
             if(response.name === pokemonName){
                 output += `
-                        <li> Pokemon Name: ${response.name}</li>
-                        <li> Pokemon #: ${response.id}</li>
-                        <li> Pokemon Height: ${response.height}</li>
-                        <li> Pokemon Weight: ${response.weight}</li>
+                <div class="card col-6">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">${response.name}</h3>
+                        <h5 class="card-subtitle text-center">#${response.id}</h5>
+                    </div>
+                    <div id="list">
+                    </div>
+                    <br>
+                </div>                
                 `;
+                list += `<li class="list-group-item d-flex justify-content-between align-items-center">Height: <span>${response.height}</span></li>`;
+                list += `<li class="list-group-item d-flex justify-content-between align-items-center">Weight: <span>${response.weight}</span></li>`;
                 response.types.forEach(function(e){
-                    output += `<li>Pokemon Type: ${e.type.name}</li>`;
+                    list += `<li class="list-group-item d-flex justify-content-between align-items-center">Type: <span>${e.type.name}</span></li>`;
                 });
-                response.abilities.forEach(function(e){
-                    output += `<li>Pokemon Abilities: ${e.ability.name}</li>`;
+                response.abilities.forEach(function(e){;
+                    list += `<li class="list-group-item d-flex justify-content-between align-items-center">Abilities: <span>${e.ability.name}</span></li>`;
                 });
                 document.getElementById('displayInfo').innerHTML = output;
+                document.getElementById('list').innerHTML = list;
             }
         }
     }

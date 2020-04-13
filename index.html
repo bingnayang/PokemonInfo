@@ -22,28 +22,28 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="card">
-            <form class="form-inline">
-                <div>
-                    <label for="text">Enter Pokemon Name</label>
-                    <input type="text" id="name">
+    <div class="container-fluid get-information">
+        <form>
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Pokemon Name">
                 </div>
-                <div>
-                    <button class="getInfo">Get Information</button>
+                <div class="col-md-3">
+                    <button class="btn btn-block btn-outline-danger getInfo">Get Information</button>
                 </div>
-            </form>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container display-information">
+        <div class="row justify-content-center" id="displayInfo">
+
         </div>
     </div>
-    <div>
-        <ul id="displayInfo"></ul>
-    </div>
-    <div>
+    <!-- <div>
         <button class="getList">Get Pokemon Name List</button>
-    </div>
+    </div> -->
  
-
-
     <!-- Bootstrap CDN JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

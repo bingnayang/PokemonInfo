@@ -11,3 +11,29 @@ body{
     margin-top: 15px;
     border-radius: 4px;
 }
+.get-information{
+    background: #f8d41f;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: -32px;
+}
+.form-control{
+    border: 4px solid #50514F;
+    margin-bottom: 5px;
+    padding: 18px;
+}
+.getInfo{
+    border: 4px solid #50514F;
+}
+.display-information{
+    margin-top: 10px;
+    width: 0 auto;
+}
+.card{
+    border: 10px solid #50514F;
+    border-radius: 15px;
+    background-color: #F75674;
+}
+.list-group-item{
+    background: #F75674;
+}
