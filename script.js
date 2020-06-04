@@ -16,12 +16,16 @@ function getInfo(e){
             let list = '';
             if(response.name === pokemonName){
                 output += `
-                <div class="card col-6">
-                    <div class="card-body">
-                        <h3 class="card-title text-center">${response.name}</h3>
-                        <h5 class="card-subtitle text-center">#${response.id}</h5>
+                <div class="row">
+                    <div class="col-md-4 pokeTitle">
+                        <div class="mx-auto pokemonMain">
+                            <h1 class="card-title text-center">${response.name}</h1>
+                            <h5 class="card-subtitle text-center">#${response.id}</h5>
+                        </div>
                     </div>
-                    <div id="list">
+                    <div class="col-md-8 pokeSubtitle">
+                        <ul class="list-group" id="list">
+                        </ul>
                     </div>
                     <br>
                 </div>                
