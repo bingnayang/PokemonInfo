@@ -42,6 +42,20 @@ function getInfo(e){
                 document.getElementById('displayInfo').innerHTML = output;
                 document.getElementById('list').innerHTML = list;
             }
+        }else{
+            let output = '';
+            output += ` 
+            <div class="card text-center errorContainer">
+                <div class="card-header errorContainer_header">
+                    <h3>Error</h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">OOPS !</h5>
+                    <p class="card-text">Pokemon Not Found</p>
+                </div>
+            </div>
+            `;
+            document.getElementById('displayInfo').innerHTML = output;
         }
     }
     xhr.send();

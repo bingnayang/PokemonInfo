@@ -46,3 +46,10 @@ body{
 .pokemonMain h5{
     color: white;
 }
+
+.errorContainer{
+    border: 3px solid orange;
+}
+.errorContainer_header{
+    background-color: orange;
+}
