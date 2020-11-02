@@ -2,7 +2,8 @@ document.querySelector('.getInfo').addEventListener('click',getInfo);
 document.querySelector('.getList').addEventListener('click',getList);
 
 function getInfo(e){
-    const pokemonName = document.querySelector('input[type="text"]').value;
+    const pokemonTemp = document.querySelector('input[type="text"]').value;
+    const pokemonName = pokemonTemp.toLowerCase();
     // console.log(pokemonName);
 
     const xhr = new XMLHttpRequest();
