@@ -1,1 +1,11 @@
-<p>pokemon-list works!</p>
+
+<div class="conatiner">
+    <div *ngFor="let pokemon of pokemonList; let indexOfelement=index;">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://pokeres.bastionbot.org/images/pokemon/{{indexOfelement+1}}.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-text text-center">{{ pokemon.name }}</h4>
+            </div>
+        </div>
+    </div>
+</div>
