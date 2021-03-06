@@ -1,23 +1,21 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" class="mx-auto d-block" alt="Responsive image">
-      <div class="row justify-content-md-center">
-          <div class="col-md-auto text-center">
-              <div class="subtitle justify-content-md-center">Pokémon Information</div>
-          </div>
-      </div>
-  </div>
+<div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" style="padding-bottom: 15px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+                class="mx-auto d-block" alt="Responsive image">
+        </div>
+    </div>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Pokemon Name">
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-block btn-outline-danger">Get Information</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-<div class="container-fluid get-information">
-  <form>
-      <div class="row">
-          <div class="col-md-9">
-              <input type="text" class="form-control" id="name" placeholder="Enter Pokemon Name">
-          </div>
-          <div class="col-md-3">
-              <button class="btn btn-block btn-outline-danger getInfo">Get Information</button>
-          </div>
-      </div>
-  </form>
-</div>
-<router-outlet></router-outlet>
+<router-outlet class="body-container"></router-outlet>
