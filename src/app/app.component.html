@@ -6,16 +6,16 @@
         </div>
     </div>
     <div class="container">
-        <form>
+        <form (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="name" placeholder="Enter Pokemon Name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Pokemon Name" [(ngModel)]="pokemonName.name" name="name">
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-block btn-outline-danger">Get Information</button>
+                    <button type="submit" class="btn btn-block btn-outline-danger">Search</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<router-outlet class="body-container"></router-outlet>
+<router-outlet></router-outlet>
