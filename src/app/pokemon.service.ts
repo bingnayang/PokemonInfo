@@ -7,11 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PokemonService {
   private baseURL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20";
-  private imageURL = "https://pokeres.bastionbot.org/images/pokemon/4.png";
+  private pokemonDetail = "https://pokeapi.co/api/v2/pokemon/";
 
   constructor(private httpClient: HttpClient) { }
 
   getPokemonList(): Observable<any>{
     return this.httpClient.get<any>(`${this.baseURL}`);
+  }
+
+  getPokemonDetail(name: string): Observable<any>{
+    return this.httpClient.get<any>(`${this.pokemonDetail}${name}`)
   }
 }
