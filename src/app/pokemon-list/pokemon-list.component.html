@@ -1,10 +1,12 @@
 
-<div class="conatiner">
-    <div *ngFor="let pokemon of pokemonList; let indexOfelement=index;">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://pokeres.bastionbot.org/images/pokemon/{{indexOfelement+1}}.png" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-text text-center">{{ pokemon.name }}</h4>
+<div class="conatiner" style="padding: 5%;">
+    <div class="row equal">
+        <div class="col" *ngFor="let pokemon of pokemonList; let indexOfelement=index;" class="col-sm-2 d-flex pb-4">
+            <div class="card h-100" style="width: 16rem; padding: 5%;">
+                <img class="card-img-top" src="https://pokeres.bastionbot.org/images/pokemon/{{indexOfelement+1}}.png" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-text text-center" style = "text-transform:capitalize;">#{{ indexOfelement+1 }} | {{ pokemon.name }}</h4>
+                </div>
             </div>
         </div>
     </div>
