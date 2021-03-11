@@ -1,4 +1,15 @@
 <div class="conatiner" style="padding: 5%;">
     <h5>{{ pokemonName }}</h5>
+    <p>ID: {{ pokemonDetail.id }}</p>
+    <p>Height: {{ pokemonDetail.height }}</p>
+    <p>Weight: {{ pokemonDetail.weight }}</p>
+    <p>Abilities:</p>
+    <div *ngFor="let abilityList of pokemonDetail.abilities; let i = index">
+        {{ abilityList["ability"]["name"] }}
+    </div>
+    <p>Moves:</p>
+    <div *ngFor="let moveList of pokemonDetail.moves; let i = index">
+        {{ moveList["move"]["name"] }}
+    </div>
 </div>
 

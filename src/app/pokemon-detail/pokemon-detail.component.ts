@@ -9,7 +9,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PokemonDetailComponent implements OnInit {
   pokemonName: string;
-  pokemonDetail: any;
+  pokemonDetail: any = {};
 
   constructor(private route: ActivatedRoute, private pokemonService: PokemonService) { }
 
