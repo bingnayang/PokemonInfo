@@ -3,6 +3,10 @@
     <p>ID: {{ pokemonDetail.id }}</p>
     <p>Height: {{ pokemonDetail.height }}</p>
     <p>Weight: {{ pokemonDetail.weight }}</p>
+    <p>Type:</p>
+    <div *ngFor="let typeList of pokemonDetail.types">
+        {{ typeList["type"]["name"] }}
+    </div>
     <p>Abilities:</p>
     <div *ngFor="let abilityList of pokemonDetail.abilities; let i = index">
         {{ abilityList["ability"]["name"] }}
