@@ -1,20 +1,27 @@
 <div class="conatiner" style="padding: 5%;">
-    <img class="card-img-top" src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonDetail.id}}.png" alt="Card image cap">
-    <h5>{{ pokemonName }}</h5>
-    <p>ID: {{ pokemonDetail.id }}</p>
-    <p>Height: {{ pokemonDetail.height }}</p>
-    <p>Weight: {{ pokemonDetail.weight }}</p>
-    <p>Type:</p>
-    <div *ngFor="let typeList of pokemonDetail.types">
-        {{ typeList["type"]["name"] }}
-    </div>
-    <p>Abilities:</p>
-    <div *ngFor="let abilityList of pokemonDetail.abilities; let i = index">
-        {{ abilityList["ability"]["name"] }}
-    </div>
-    <p>Moves:</p>
-    <div *ngFor="let moveList of pokemonDetail.moves; let i = index">
-        {{ moveList["move"]["name"] }}
+    <div class="row">
+        <div class="col">
+            <img class="card-img-top" src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonDetail.id}}.png" alt="Card image cap">
+        </div>
+        <div class="col">
+            <h6># {{ pokemonDetail.id }}</h6>
+            <h5>{{ pokemonName }}</h5>
+
+            <p>Height: {{ pokemonDetail.height }}</p>
+            <p>Weight: {{ pokemonDetail.weight }}</p>
+            <p>Type:</p>
+            <div *ngFor="let typeList of pokemonDetail.types">
+                {{ typeList["type"]["name"] }}
+            </div>
+            <p>Abilities:</p>
+            <div *ngFor="let abilityList of pokemonDetail.abilities; let i = index">
+                {{ abilityList["ability"]["name"] }}
+            </div>
+            <p>Moves:</p>
+            <div *ngFor="let moveList of pokemonDetail.moves; let i = index">
+                {{ moveList["move"]["name"] }}
+            </div>
+        </div>
     </div>
 </div>
 
