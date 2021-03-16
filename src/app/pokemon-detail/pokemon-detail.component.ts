@@ -15,6 +15,7 @@ export class PokemonDetailComponent implements OnInit {
   strongAgainstList: any[] = [];
   resistantToList: any[] = [];
   vulnerableToList: any[] = [];
+  typeObject: any[] = [];
   pokemonTypeDetail: any[] = [
     {
       "type":"normal",
@@ -164,8 +165,19 @@ export class PokemonDetailComponent implements OnInit {
       console.log("Pokemon Type:")
       for(var i of data["types"]){
         console.log(i["type"]["name"])
-        // console.log(this.pokemonTypeDetail["type"] == i["type"]["name"]);
-        console.log(this.pokemonTypeDetail.find(e => e["type"] === i["type"]["name"]))
+        this.typeObject = this.pokemonTypeDetail.find(e => e["type"] === i["type"]["name"])
+
+        console.log("Pokemon Strong Against")
+        console.log(this.typeObject["Strong Against"])
+
+        console.log("Pokemon Weak Against")
+        console.log(this.typeObject["Weak Against"])
+
+        console.log("Pokemon Resistant To")
+        console.log(this.typeObject["Resistant To"])
+
+        console.log("Pokemon Vulnerable To")
+        console.log(this.typeObject["Vulnerable To"])
       }
     })
   }
