@@ -1,25 +1,55 @@
 <div class="conatiner" style="padding: 5%;">
     <div class="row">
-        <div class="col">
+        <div class="col-4">
             <img class="card-img-top" src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonDetail.id}}.png" alt="Card image cap">
         </div>
-        <div class="col">
+        <div class="col-8">
             <h6># {{ pokemonDetail.id }}</h6>
             <h5>{{ pokemonName }}</h5>
 
             <p>Height: {{ pokemonDetail.height }}</p>
             <p>Weight: {{ pokemonDetail.weight }}</p>
             <p>Type:</p>
-            <div *ngFor="let typeList of pokemonDetail.types">
-                {{ typeList["type"]["name"] }}
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let typeList of pokemonDetail.types">
+                    <button type="button" class="btn btn-primary">{{ typeList["type"]["name"] }}</button>
+                </div>
+            </div>
+            <p>Strong Against:</p>
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let item of strongAgainstList">
+                    <button type="button" class="btn btn-primary">{{ item }}</button>
+                </div>
+            </div>
+            <p>Weak Against:</p>
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let item of weakAgainstList">
+                    <button type="button" class="btn btn-primary">{{ item }}</button>
+                </div>
+            </div>
+            <p>Resistant To:</p>
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let item of resistantToList">
+                    <button type="button" class="btn btn-primary">{{ item }}</button>
+                </div>
+            </div>
+            <p>Vulnerable To:</p>
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let item of vulnerableToList">
+                    <button type="button" class="btn btn-primary">{{ item }}</button>
+                </div>
             </div>
             <p>Abilities:</p>
-            <div *ngFor="let abilityList of pokemonDetail.abilities; let i = index">
-                {{ abilityList["ability"]["name"] }}
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let abilityList of pokemonDetail.abilities; let i = index">
+                    <button type="button" class="btn btn-primary">{{ abilityList["ability"]["name"] }}</button>
+                </div>
             </div>
             <p>Moves:</p>
-            <div *ngFor="let moveList of pokemonDetail.moves; let i = index">
-                {{ moveList["move"]["name"] }}
+            <div class="d-flex flex-wrap">
+                <div class="p-2" *ngFor="let moveList of pokemonDetail.moves; let i = index">
+                    <button type="button" class="btn btn-primary">{{ moveList["move"]["name"] }}</button>
+                </div>
             </div>
         </div>
     </div>
