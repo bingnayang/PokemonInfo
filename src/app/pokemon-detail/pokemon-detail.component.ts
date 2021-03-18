@@ -149,7 +149,6 @@ export class PokemonDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonName = this.route.snapshot.params['name'];
-    console.log(this.pokemonName)
     this.getPokemonDetail(this.pokemonName);
     this.getPokemonTypeDetail(this.pokemonName);
   }
@@ -157,6 +156,7 @@ export class PokemonDetailComponent implements OnInit {
   private getPokemonDetail(name: string){
     this.pokemonService.getPokemonDetail(name).subscribe(data => {
       this.pokemonDetail = data;
+      console.log(data)
     })
   }
 
@@ -167,17 +167,29 @@ export class PokemonDetailComponent implements OnInit {
         console.log(i["type"]["name"])
         this.typeObject = this.pokemonTypeDetail.find(e => e["type"] === i["type"]["name"])
 
-        console.log("Pokemon Strong Against")
-        console.log(this.typeObject["Strong Against"])
+        // console.log("Pokemon Strong Against")
+        // console.log(this.typeObject["Strong Against"])
+        this.typeObject["Strong Against"].forEach(element => {
+          this.strongAgainstList.push(element);
+        });
 
-        console.log("Pokemon Weak Against")
-        console.log(this.typeObject["Weak Against"])
+        // console.log("Pokemon Weak Against")
+        // console.log(this.typeObject["Weak Against"])
+        this.typeObject["Weak Against"].forEach(element => {
+          this.weakAgainstList.push(element);
+        });
 
-        console.log("Pokemon Resistant To")
-        console.log(this.typeObject["Resistant To"])
+        // console.log("Pokemon Resistant To")
+        // console.log(this.typeObject["Resistant To"])
+        this.typeObject["Resistant To"].forEach(element => {
+          this.resistantToList.push(element);
+        });
 
-        console.log("Pokemon Vulnerable To")
-        console.log(this.typeObject["Vulnerable To"])
+        // console.log("Pokemon Vulnerable To")
+        // console.log(this.typeObject["Vulnerable To"])
+        this.typeObject["Vulnerable To"].forEach(element => {
+          this.vulnerableToList.push(element);
+        });
       }
     })
   }
