@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-center">
                             <div class="col">
-                                <h5>Height: {{ pokemonDetail.height }}</h5>
+                                <h5>Height: {{ pokemonDetail.height/10 }} m</h5>
                             </div>
                             <div class="col">
                                 <div *ngFor="let typeList of pokemonDetail.types">
@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <h5>Weight: {{ pokemonDetail.weight }}</h5>
+                                <h5>Weight: {{ pokemonDetail.weight /10 }} kg</h5>
                             </div>
                         </div>
                     </div>
