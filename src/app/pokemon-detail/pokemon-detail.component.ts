@@ -16,6 +16,9 @@ export class PokemonDetailComponent implements OnInit {
   resistantToList: any[] = [];
   vulnerableToList: any[] = [];
   typeObject: any[] = [];
+  prePokemon: string;
+  postPokemon: string;
+  currentPokemonId: number;
   pokemonTypeDetail: any[] = [
     {
       "type":"normal",
@@ -153,18 +156,28 @@ export class PokemonDetailComponent implements OnInit {
     this.getPokemonTypeDetail(this.pokemonName);
   }
 
+  private getLeftPokemon(value: number){
+
+  }
+
   private getPokemonDetail(name: string){
     this.pokemonService.getPokemonDetail(name).subscribe(data => {
       this.pokemonDetail = data;
-      console.log(data)
+
+      // Get previous pokemon number
+      this.currentPokemonId = this.pokemonDetail["id"]-1;
+      console.log(this.currentPokemonId)
+      this.pokemonService.getPokemonName(this.currentPokemonId).subscribe(data => {
+        this.prePokemon = data["name"];
+        console.log("PrePokemon")
+        console.log(this.prePokemon);
+      })
     })
   }
 
   private getPokemonTypeDetail(name: string){
     this.pokemonService.getPokemonDetail(name).subscribe(data => {
-      console.log("Pokemon Type:")
       for(var i of data["types"]){
-        console.log(i["type"]["name"])
         this.typeObject = this.pokemonTypeDetail.find(e => e["type"] === i["type"]["name"])
 
         // console.log("Pokemon Strong Against")
