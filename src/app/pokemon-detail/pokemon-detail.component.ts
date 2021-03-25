@@ -17,7 +17,7 @@ export class PokemonDetailComponent implements OnInit {
   vulnerableToList: any[] = [];
   typeObject: any[] = [];
   prePokemon: string;
-  postPokemon: string;
+  nextPokemon: string;
   currentPokemonId: number;
   pokemonTypeDetail: any[] = [
     {
@@ -164,13 +164,22 @@ export class PokemonDetailComponent implements OnInit {
     this.pokemonService.getPokemonDetail(name).subscribe(data => {
       this.pokemonDetail = data;
 
-      // Get previous pokemon number
+      // Get previous pokemon name by id
       this.currentPokemonId = this.pokemonDetail["id"]-1;
       console.log(this.currentPokemonId)
       this.pokemonService.getPokemonName(this.currentPokemonId).subscribe(data => {
         this.prePokemon = data["name"];
         console.log("PrePokemon")
         console.log(this.prePokemon);
+      })
+
+      // Get next pokemon name by id
+      this.currentPokemonId = this.pokemonDetail["id"]+1;
+      console.log(this.currentPokemonId)
+      this.pokemonService.getPokemonName(this.currentPokemonId).subscribe(data => {
+        this.nextPokemon = data["name"];
+        console.log("NextPokemon")
+        console.log(this.nextPokemon);
       })
     })
   }
