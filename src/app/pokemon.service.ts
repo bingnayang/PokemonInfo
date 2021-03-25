@@ -18,4 +18,8 @@ export class PokemonService {
   getPokemonDetail(name: string): Observable<any>{
     return this.httpClient.get<any>(`${this.pokemonDetail}${name}`)
   }
+
+  getPokemonName(id: number): Observable<any>{
+    return this.httpClient.get<any>(`${this.pokemonDetail}${id}`)
+  }
 }
