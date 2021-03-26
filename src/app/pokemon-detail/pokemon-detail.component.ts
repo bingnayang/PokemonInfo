@@ -156,8 +156,8 @@ export class PokemonDetailComponent implements OnInit {
     this.getPokemonTypeDetail(this.pokemonName);
   }
 
-  private getLeftPokemon(value: number){
-
+  getPokemon(value: string){
+    console.log(value)
   }
 
   private getPokemonDetail(name: string){
