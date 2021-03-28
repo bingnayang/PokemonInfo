@@ -196,6 +196,11 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   private getPokemonTypeDetail(name: string){
+    this.strongAgainstList = [];
+    this.weakAgainstList = [];
+    this.resistantToList = [];
+    this.vulnerableToList = [];
+
     this.pokemonService.getPokemonDetail(name).subscribe(data => {
       for(var i of data["types"]){
         this.typeObject = this.pokemonTypeDetail.find(e => e["type"] === i["type"]["name"])
@@ -203,25 +208,33 @@ export class PokemonDetailComponent implements OnInit {
         // console.log("Pokemon Strong Against")
         // console.log(this.typeObject["Strong Against"])
         this.typeObject["Strong Against"].forEach(element => {
-          this.strongAgainstList.push(element);
+          if(this.strongAgainstList.indexOf(element) === -1){
+            this.strongAgainstList.push(element);
+          }
         });
 
         // console.log("Pokemon Weak Against")
         // console.log(this.typeObject["Weak Against"])
         this.typeObject["Weak Against"].forEach(element => {
-          this.weakAgainstList.push(element);
+          if(this.weakAgainstList.indexOf(element) === -1){
+            this.weakAgainstList.push(element);
+          }
         });
 
         // console.log("Pokemon Resistant To")
         // console.log(this.typeObject["Resistant To"])
         this.typeObject["Resistant To"].forEach(element => {
-          this.resistantToList.push(element);
+          if(this.resistantToList.indexOf(element) === -1){
+            this.resistantToList.push(element);
+          }
         });
 
         // console.log("Pokemon Vulnerable To")
         // console.log(this.typeObject["Vulnerable To"])
         this.typeObject["Vulnerable To"].forEach(element => {
-          this.vulnerableToList.push(element);
+          if(this.vulnerableToList.indexOf(element) === -1){
+            this.vulnerableToList.push(element);
+          }
         });
       }
     })
