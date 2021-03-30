@@ -173,6 +173,7 @@ export class PokemonDetailComponent implements OnInit {
 
   private getPokemonDetail(name: string){
     this.pokemonService.getPokemonDetail(name).subscribe(data => {
+
       this.pokemonDetail = data;
 
       // Get previous pokemon name by id
@@ -180,8 +181,6 @@ export class PokemonDetailComponent implements OnInit {
       console.log(this.currentPokemonId)
       this.pokemonService.getPokemonName(this.currentPokemonId).subscribe(data => {
         this.prePokemon = data["name"];
-        console.log("PrePokemon")
-        console.log(this.prePokemon);
       })
 
       // Get next pokemon name by id
@@ -192,6 +191,8 @@ export class PokemonDetailComponent implements OnInit {
         console.log("NextPokemon")
         console.log(this.nextPokemon);
       })
+    },error => {
+      this.router.navigate(['pokemon-error',this.pokemonName]);
     })
   }
 
