@@ -10,7 +10,7 @@ import { Pokemon } from './pokemon';
 export class AppComponent {
   title = 'Pokemon';
   pokemonName: Pokemon = new Pokemon();
-
+  
   constructor(private router: Router) { }
 
   onSubmit(){
